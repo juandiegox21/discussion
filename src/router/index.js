@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Settings from '../views/Settings.vue'
-import { auth } from '../firebaseConfig'
+import { auth } from '../firebase'
 
 Vue.use(VueRouter)
 
