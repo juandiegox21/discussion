@@ -1,6 +1,7 @@
 <template>
     <div>
-        Dashboard: {{ $store.state.userProfile.name }}
+        Dashboard: {{ $store.state.userProfile.name }},
+        Welcome!
     </div>
 </template>
 
