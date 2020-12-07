@@ -12,10 +12,19 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-      - run: npm ci
-      - run: npm run build
+        with:
+          node-version: 12.x
+      - run: npm ci --save webpack
+      - run: npm run build --prod
       - uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting --project 760199546063
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          VUE_APP_FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+          VUE_APP_FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
+          VUE_APP_FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          VUE_APP_FIREBASE_STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
+          VUE_APP_FIREBASE_MESSAGE_SENDER_ID: ${{ secrets.FIREBASE_MESSAGE_SENDER_ID }}
+          VUE_APP_FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+          VUE_APP_FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
