@@ -1,7 +1,7 @@
 <template>
     <div>
         Dashboard: {{ $store.state.userProfile.name }}
-        <b-button type="is-danger">Close account</b-button>
+        <b-button type="is-danger">Close dab</b-button>
     </div>
 </template>
 
