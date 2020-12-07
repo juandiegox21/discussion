@@ -12,10 +12,6 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: 12.x
-      - run: |
-          touch .env
-          echo VUE_APP_FIREBASE_API_KEY=${{ secrets._VUE_APP_FIREBASE_API_KEY }} >> .env
-          cat .env
       - run: npm ci
       - run: npm run build
       - uses: w9jds/firebase-action@master
@@ -23,6 +19,7 @@ jobs:
           args: deploy --only hosting --project 760199546063
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          VUE_APP_FIREBASE_API_KEY: ${{ secrets._VUE_APP_FIREBASE_API_KEY }}
           VUE_APP_FIREBASE_AUTH_DOMAIN: ${{ secrets._VUE_APP_FIREBASE_AUTH_DOMAIN }}
           VUE_APP_FIREBASE_PROJECT_ID: ${{ secrets._VUE_APP_FIREBASE_PROJECT_ID }}
           VUE_APP_FIREBASE_STORAGE_BUCKET: ${{ secrets._VUE_APP_FIREBASE_STORAGE_BUCKET }}
