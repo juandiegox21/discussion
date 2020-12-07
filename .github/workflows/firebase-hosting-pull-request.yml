@@ -8,9 +8,11 @@ jobs:
   firebase-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-      - uses: w9jds/firebase-action@master
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm ci
+      - run: npm run build --prod
+      - uses: w9jds/firebase-action@v0
         with:
           args: deploy --only hosting --project 760199546063
         env:
