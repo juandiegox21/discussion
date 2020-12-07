@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: 12.x
-      - run: npm ci --save webpack
+      - run: npm ci
       - run: npm run build --prod
       - uses: w9jds/firebase-action@master
         with:
