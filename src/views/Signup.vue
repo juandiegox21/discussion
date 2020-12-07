@@ -4,7 +4,7 @@
         <div class="column is-half has-text-centered">
             <h1 class="title">Create an account</h1>
 
-            <form @submit.prevent>
+            <form @submit.prevent="signup()">
                 <b-field label="Name">
                     <b-input v-model="name"></b-input>
                 </b-field>
@@ -20,9 +20,9 @@
                         password-reveal>
                     </b-input>
                 </b-field>
+                
+                <button type="submit" class="button is-primary">Sign up</button>
             </form>
-
-            <b-button type="is-primary" @click="signup()">Sign up</b-button>
 
             <div style="padding-top: 10px;">
                 <b-button type="is-grey" icon-left="google" @click="login('google')">Sign In with Google</b-button>
