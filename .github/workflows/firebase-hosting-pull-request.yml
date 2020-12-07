@@ -12,8 +12,7 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: 12.x
-      - script:
-        - export VUE_APP_FIREBASE_API_KEY=${{ secrets._VUE_APP_FIREBASE_API_KEY }}
+      - run: export VUE_APP_FIREBASE_API_KEY=${{ secrets._VUE_APP_FIREBASE_API_KEY }}
       - run: npm ci
       - run: npm run build
       - uses: w9jds/firebase-action@master
