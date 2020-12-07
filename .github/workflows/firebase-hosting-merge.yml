@@ -15,9 +15,9 @@ jobs:
         with:
           node-version: 12.x
       - run: |
-        touch .env
-        echo VUE_APP_FIREBASE_API_KEY=${{ secrets._VUE_APP_FIREBASE_API_KEY }} >> .env
-        cat .env
+          touch .env
+          echo VUE_APP_FIREBASE_API_KEY=${{ secrets._VUE_APP_FIREBASE_API_KEY }} >> .env
+          cat .env
       - run: npm ci
       - run: npm run build
       - uses: w9jds/firebase-action@master
