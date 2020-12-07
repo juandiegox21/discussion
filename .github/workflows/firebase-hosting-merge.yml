@@ -7,15 +7,17 @@ name: Deploy to Firebase Hosting on merge
     branches:
       - master
 jobs:
-  build_and_deploy:
+  firebase-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DISCUSSION_COMMUNITY }}'
-          channelId: live
-          projectId: discussion-community
+          node-version: '12.x'
+      - run: npm install
+      - run: npm run build:prod
+      - uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
         env:
-          FIREBASE_CLI_PREVIEWS: hostingchannels
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
