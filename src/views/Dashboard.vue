@@ -1,10 +1,10 @@
 <template>
     <div>
         <div class="columns">
-            <div class="column is-one-third profile-info">
+            <div class="column is-one-fifth profile-info">
                 <div class="has-text-centered">
                     <img src="../assets/img/no-avatar.png"  width="150" height="100" alt="No avatar">
-                    <h1 class="title">{{ $store.state.userProfile.name }}</h1>
+                    <h1 class="title is-5">{{ $store.state.userProfile.name }}</h1>
                 </div>
             </div>
 

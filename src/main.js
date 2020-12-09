@@ -6,7 +6,9 @@ import { auth } from './firebase'
 import './assets/scss/app.scss'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
+import { firestorePlugin } from 'vuefire'
 
+Vue.use(firestorePlugin)
 Vue.use(Buefy)
 
 Vue.config.productionTip = false

@@ -23,7 +23,6 @@ export default new Vuex.Store({
       if (!authProviders[form.provider]) {
         // Sign user in
         const { user } = await auth.signInWithEmailAndPassword(form.email, form.password)
-
         // Fetch user profile and set in state
         dispatch('fetchUserProfile', user)
       } else {
@@ -34,7 +33,7 @@ export default new Vuex.Store({
         await db.collection('users').doc(user.uid).set({
           name: user.displayName
         })
-      }      
+      }
     },
 
     async fetchUserProfile({ commit }, user) {
@@ -54,9 +53,6 @@ export default new Vuex.Store({
       await db.collection('users').doc(user.uid).set({
         name: form.name
       })
-
-      // Fetch user profile and set in state
-      dispatch('fetchUserProfile', user)
     },
 
     async logout({ commit }) {
