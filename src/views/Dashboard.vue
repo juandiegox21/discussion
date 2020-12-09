@@ -3,7 +3,7 @@
         <div class="columns">
             <div class="column is-one-fifth profile-info">
                 <div class="has-text-centered">
-                    <img src="../assets/img/no-avatar.png"  width="150" height="100" alt="No avatar">
+                    <img class="avatar" :src="userAvatar"  width="150" height="100" alt="No avatar">
                     <h1 class="title is-5">{{ $store.state.userProfile.name }}</h1>
                 </div>
             </div>
@@ -25,16 +25,31 @@ import Feed from '../components/Dashboard/Feed'
 
 export default {
     name: 'Dashboard',
+
     components: {
         MakePost,
         Feed
+    },
+
+    computed: {
+        userAvatar() 
+        {
+            let userProfile = this.$store.state.userProfile;
+            let userIsLoggedIn = Object.keys(userProfile).length > 0
+            
+            if (userIsLoggedIn && userProfile.photoURL) {
+                return userProfile.photoURL
+            }
+
+            return require('../assets/img/no-avatar.png')
+        }
     }
 }
 </script>
 
 <style lang="scss">
-    .profile-info {
-        background: #f7f7f7;
-        height: 100vh;
+    .avatar
+    {
+        border-radius: 50%;
     }
 </style>

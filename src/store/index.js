@@ -31,7 +31,9 @@ export default new Vuex.Store({
 
         // Create user profile object in userCollections
         await db.collection('users').doc(user.uid).set({
-          name: user.displayName
+          uid: user.uid,
+          name: user.displayName,
+          photoURL: user.photoURL
         })
       }
     },
