@@ -3,12 +3,16 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import { auth } from './firebase'
-import './assets/scss/app.scss'
+import { firestorePlugin } from 'vuefire'
+import moment from 'moment'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
+import './assets/scss/app.scss'
 
+Vue.use(firestorePlugin)
 Vue.use(Buefy)
 
+Vue.prototype.$moment = moment
 Vue.config.productionTip = false
 
 let app
@@ -24,4 +28,4 @@ auth.onAuthStateChanged(user => {
   if (user) {
     store.dispatch('fetchUserProfile', user)
   }
-});
+})
