@@ -4,7 +4,7 @@
             <div class="column is-one-fifth profile-info">
                 <div class="has-text-centered">
                     <img class="avatar" :src="userAvatar"  width="150" height="100" alt="No avatar">
-                    <h1 class="title is-5">{{ $store.state.userProfile.name }}</h1>
+                    <h1 class="title is-5">{{ userProfile.name }}</h1>
                 </div>
             </div>
 
@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import MakePost from '../components/Dashboard/MakePost'
 import Feed from '../components/Dashboard/Feed'
 
@@ -32,13 +33,16 @@ export default {
     },
 
     computed: {
-        userAvatar() 
+        ...mapState([
+            'userProfile'
+        ]),
+        userAvatar()
         {
-            let userProfile = this.$store.state.userProfile;
+            let userProfile = this.userProfile;
             let userIsLoggedIn = Object.keys(userProfile).length > 0
             
-            if (userIsLoggedIn && userProfile.photoURL) {
-                return userProfile.photoURL
+            if (userIsLoggedIn && userProfile.profilePictureURL) {
+                return userProfile.profilePictureURL
             }
 
             return require('../assets/img/no-avatar.png')
