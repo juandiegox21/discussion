@@ -48,7 +48,7 @@
                             <article class="media" v-for="(comment, contentId) in post.commentsContent" :key="contentId">
                                 <figure class="media-left">
                                     <p class="image is-48x48">
-                                        <img class="is-rounded" :src="userAvatar(post.actor_profile_pic)">
+                                        <img class="is-rounded" :src="userAvatar(comment.actor_profile_pic)">
                                     </p>
                                 </figure>
                                 <div class="media-content">
