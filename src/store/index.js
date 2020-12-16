@@ -1,4 +1,3 @@
-import { reject, resolve } from 'core-js/fn/promise'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { auth, authProviders, db, storage } from '../firebase'
