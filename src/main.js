@@ -6,7 +6,6 @@ import { auth } from './firebase'
 import { firestorePlugin } from 'vuefire'
 import moment from 'moment'
 import Buefy from 'buefy'
-import 'buefy/dist/buefy.css'
 import './assets/scss/app.scss'
 
 Vue.use(firestorePlugin)
