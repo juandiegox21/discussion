@@ -72,4 +72,8 @@ export default {
 .content {
   padding: 10px;
 }
+
+.navbar {
+  box-shadow: -3px 1px 20px 0px #e5e5e5;
+}
 </style>
