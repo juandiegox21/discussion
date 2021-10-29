@@ -8,7 +8,7 @@
 ### Creating a post, liking, and commenting
 ![alt text][discussionscreenshot2]
 
-### Real time communication
+### Real time communication (Click on the picture, it will take you to a video)
 <a href="https://i.imgur.com/lRcY5RA.mp4" title="Real Time Communication"><img src="https://i.imgur.com/hnL6nCd.png" alt="Real Time Communication" /></a>
 
 ---
