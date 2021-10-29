@@ -12,7 +12,7 @@
 <a href="https://i.imgur.com/lRcY5RA.mp4" title="Real Time Communication"><img src="https://i.imgur.com/hnL6nCd.png" alt="Real Time Communication" /></a>
 
 ---
-Want to try it out? Check the [demo][demourl] out. Posts, comments and likes are removed every 10 minutes.
+Want to try it out? Check the [demo][demourl]. Posts, comments and likes are removed every 10 minutes.
 
 ---
 
