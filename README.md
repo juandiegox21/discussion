@@ -30,4 +30,4 @@ This project was possible thanks to [VueJS][vuejsurl], Vuex for state management
 [firebaseurl]: https://firebase.google.com/
 [discussionscreenshot1]: https://i.imgur.com/7ec8fng.gif
 [discussionscreenshot2]: https://i.imgur.com/srpqK6B.gif
-[demourl]: demo
+[demourl]: https://discussion-community.firebaseapp.com
